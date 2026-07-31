@@ -6,8 +6,8 @@ project:
 website:
   # Set both of these when you create a project from the template.
   # site-url is REQUIRED for Quarto to generate sitemap.xml.
-  title: "PROJECT-TITLE"
-  site-url: "https://migue-rc.github.io/PROJECT-NAME"
+  title: "Proyección de ingresos municipales: Casos de ingresos por transferencias."
+  site-url: "https://migue-rc.github.io/proyeccion-ingresos-municipales"
   favicon: favicon.ico
   # favicon: "https://migue-rc.github.io/favicon.ico"
   # Creates a top navbar so users can always get back to your Hub
