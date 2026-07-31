@@ -1,0 +1,41 @@
+project:
+  type: website
+  resources:
+    - llms.txt
+
+website:
+  # Set both of these when you create a project from the template.
+  # site-url is REQUIRED for Quarto to generate sitemap.xml.
+  title: "PROJECT-TITLE"
+  site-url: "https://migue-rc.github.io/PROJECT-NAME"
+  favicon: favicon.ico
+  # favicon: "https://migue-rc.github.io/favicon.ico"
+  # Creates a top navbar so users can always get back to your Hub
+  navbar:
+    left:
+      - text: "← Back to Main"
+        href: "https://migue-rc.github.io"
+
+# Engine configuration (Moved out of format block)
+execute:
+  warning: false # Hides Python deprecation/info warnings in the final output
+
+format:
+  html:
+    # Loads the base theme, then any local SCSS variables
+    # Order matters: base theme -> shared styles (fetched) -> local overrides.
+    # sketchy-*.scss are fetched from the main repo (do not edit them).
+    # custom.scss is your per-project override (safe to edit; never fetched).
+    theme:
+      light: [sketchy, sketchy-light.scss, custom.scss]
+      dark: [sketchy, sketchy-dark.scss, custom.scss]
+    # Injects your live, remote CSS file for instant global updates
+    highlight-style: 
+      light: github
+      dark: monokai
+    include-in-header: 
+      text: |
+        <link rel="stylesheet" href="https://migue-rc.github.io/brand-theme.css">
+    css: local-style.css
+    toc: true
+    code-fold: true

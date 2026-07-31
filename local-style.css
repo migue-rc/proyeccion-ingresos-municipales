@@ -1,0 +1,9 @@
+/* ============================================================================
+   PER-PROJECT PLAIN-CSS OVERRIDES  —  EDIT THIS FILE
+   ----------------------------------------------------------------------------
+   Quick CSS tweaks for this project only. Never touched by `make fetch-styles`.
+   Loaded after the shared theme; use this for one-off CSS, or custom.scss for
+   theme/variable-level changes. Example:
+
+     .navbar-title { font-weight: 700; }
+   ============================================================================ */

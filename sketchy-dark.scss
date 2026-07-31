@@ -1,0 +1,139 @@
+/*-- scss:defaults --*/
+
+// 1. The Chalkboard Backgrounds
+$body-bg: #222529 !default;      // Dark slate/charcoal background
+$body-color: #f8f9fa !default;   // Off-white chalky text
+
+// 2. The Chalk Colors (Pastels look best on dark Sketchy)
+$primary: #66d9ef !default;      // Bright chalky blue for primary buttons
+$secondary: #444a51 !default;    // Muted dark grey for secondary elements
+$success: #a6e22e !default;      // Neon chalk green
+$info: #fd971f !default;         // Chalky orange
+$warning: #e6db74 !default;      // Chalky yellow
+$danger: #f92672 !default;       // Chalky pink/red
+
+// 3. Links and Highlights
+$link-color: #66d9ef !default;
+
+// 4. Cards and Containers (Slightly lighter than the background)
+$card-bg: #2c3035 !default;
+$card-cap-bg: rgba(255, 255, 255, 0.05) !default;
+
+// We need to lighten the borders so they show up against the dark background
+$border-color: #6c757d !default;
+$input-border-color: #6c757d !default;
+
+
+/*-- scss:rules --*/
+
+// Accent for the card hover ring + title (dark mode).
+:root {
+  --card-accent: #66d9ef;
+  --card-accent-glow: rgba(102, 217, 239, 0.20);
+}
+
+// Sidebar category labels at rest: their own color, lightened toward white so
+// the (intentionally dark) category hues stay readable on the dark background.
+.quarto-listing-category .category.cat-colored {
+  color: color-mix(in srgb, var(--cat-color), white 45%) !important;
+}
+
+.navbar {
+  background-color: #1a1c20 !important;
+  border-bottom: 2px solid #6c757d;
+
+  // Keep navbar elements light for contrast against the dark background.
+  --bs-navbar-color: rgba(248, 249, 250, 0.75);
+  --bs-navbar-hover-color: #ffffff;
+  --bs-navbar-active-color: #ffffff;
+  --bs-navbar-brand-color: #f8f9fa;
+  --bs-navbar-brand-hover-color: #ffffff;
+  --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.12);
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23f8f9fa' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+// Guarantee a light hamburger on the dark navbar (direct override).
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23f8f9fa' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.navbar .navbar-title,
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .menu-text,
+.navbar .bi,
+.navbar .navbar-toggler,
+.navbar .quarto-navigation-tool,
+.navbar .quarto-navigation-tool .bi,
+.navbar #quarto-search .aa-DetachedSearchButton {
+  color: #f8f9fa !important;
+}
+
+.navbar .navbar-brand:hover,
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .quarto-navigation-tool:hover {
+  color: #ffffff !important;
+}
+
+// Search button icon (Quarto sets it gray) and faint tool opacity.
+.navbar #quarto-search .aa-DetachedSearchButton,
+.navbar #quarto-search .aa-DetachedSearchButtonIcon,
+.navbar #quarto-search .aa-DetachedSearchButtonIcon .aa-SubmitIcon,
+.navbar #quarto-search svg.aa-SubmitIcon {
+  color: #f8f9fa !important;
+}
+
+.navbar .quarto-navigation-tool,
+.navbar #quarto-search .aa-DetachedSearchButton {
+  opacity: 1 !important;
+}
+
+// Dark-mode toggle icon: re-issue the background-image SVG with a light fill.
+.navbar .quarto-color-scheme-toggle:not(.alternate) .bi::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(248, 249, 250, 1)" class="bi bi-toggle-off" viewBox="0 0 16 16"><path d="M11 4a4 4 0 0 1 0 8H8a4.992 4.992 0 0 0 2-4 4.992 4.992 0 0 0-2-4h3zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5z"/></svg>') !important;
+}
+.navbar .quarto-color-scheme-toggle.alternate .bi::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(248, 249, 250, 1)" class="bi bi-toggle-on" viewBox="0 0 16 16"><path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>') !important;
+}
+
+.form-control {
+  background-color: #2c3035;
+  color: #f8f9fa;
+}
+
+.form-control:focus {
+  background-color: #222529;
+  color: #ffffff;
+}
+
+code {
+  color: #66d9ef !important;            /* Chalky blue text */
+  background-color: #1a1c20 !important; /* Force a dark slate background */
+  border: 1px solid #444a51 !important; /* Subtle dark grey border */
+  padding: 0.2em 0.4em !important;
+  border-radius: 4px !important;
+}
+
+pre code {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+pre code {
+  color: #f8f9fa !important;
+  background-color: transparent; 
+}
+
+.listing-category {
+  color: #f8f9fa !important;             /* Bright chalk white text */
+  border-color: rgba(248, 249, 250, 0.5) !important; /* Semi-transparent white border */
+  background-color: transparent !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.listing-category:hover {
+  background-color: rgba(248, 249, 250, 0.1) !important; /* Slight white glow on hover */
+  color: #ffffff !important;
+}

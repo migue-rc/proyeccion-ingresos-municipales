@@ -1,0 +1,93 @@
+/*-- scss:defaults --*/
+
+// Warm "paper" tone for surfaces in light mode.
+$paper-bg:     #f7f2e7;   // navbar / paper background
+$paper-border: #e4dcc8;   // subtle warm border
+$ink:          #2b2b2b;   // dark navbar text/icons
+$ink-strong:   #000000;   // hover
+
+/*-- scss:rules --*/
+
+// Accent for the card hover ring + title (light mode).
+:root {
+  --card-accent: #185fa5;
+  --card-accent-glow: rgba(24, 95, 165, 0.22);
+}
+
+// Sidebar category labels at rest: their own category color (readable on the
+// light paper background). Hover/active accent is handled in brand-theme.css.
+.quarto-listing-category .category.cat-colored {
+  color: var(--cat-color) !important;
+}
+
+// Sketchy ships a dark navbar (#343a40) with white text even in light mode,
+// and the navbar carries data-bs-theme="dark" which forces light components.
+// Override the navbar to a paper background with dark, readable elements.
+.navbar {
+  background-color: $paper-bg !important;
+  border-bottom: 2px solid $paper-border;
+
+  // Bootstrap navbar component variables (override the dark-theme defaults)
+  --bs-navbar-color: #{rgba($ink, 0.75)};
+  --bs-navbar-hover-color: #{$ink-strong};
+  --bs-navbar-active-color: #{$ink-strong};
+  --bs-navbar-brand-color: #{$ink};
+  --bs-navbar-brand-hover-color: #{$ink-strong};
+  --bs-navbar-toggler-border-color: #{rgba($ink, 0.12)};
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%232b2b2b' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+// The navbar carries data-bs-theme="dark", so `[data-bs-theme=dark]
+// .navbar-toggler-icon` forces a white hamburger. Override it directly.
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%232b2b2b' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+// Force every textual / icon element in the navbar to the dark ink color.
+.navbar .navbar-title,
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .menu-text,
+.navbar .bi,
+.navbar .navbar-toggler,
+.navbar .quarto-navigation-tool,
+.navbar .quarto-navigation-tool .bi,
+.navbar #quarto-search .aa-DetachedSearchButton {
+  color: $ink !important;
+}
+
+.navbar .navbar-brand:hover,
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .quarto-navigation-tool:hover {
+  color: $ink-strong !important;
+}
+
+// The search button icon is set to gray/white by Quarto — make it dark ink.
+.navbar #quarto-search .aa-DetachedSearchButton,
+.navbar #quarto-search .aa-DetachedSearchButtonIcon,
+.navbar #quarto-search .aa-DetachedSearchButtonIcon .aa-SubmitIcon,
+.navbar #quarto-search svg.aa-SubmitIcon {
+  color: $ink !important;
+}
+
+// Nav tools (search / dark-mode toggle) ship at opacity .7 — make them solid.
+.navbar .quarto-navigation-tool,
+.navbar #quarto-search .aa-DetachedSearchButton {
+  opacity: 1 !important;
+}
+
+// The dark-mode toggle icon is a background-image SVG with a baked-in white
+// fill — `color` can't change it, so re-issue the SVG with a dark fill.
+.navbar .quarto-color-scheme-toggle:not(.alternate) .bi::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(43, 43, 43, 1)" class="bi bi-toggle-off" viewBox="0 0 16 16"><path d="M11 4a4 4 0 0 1 0 8H8a4.992 4.992 0 0 0 2-4 4.992 4.992 0 0 0-2-4h3zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5z"/></svg>') !important;
+}
+.navbar .quarto-color-scheme-toggle.alternate .bi::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(43, 43, 43, 1)" class="bi bi-toggle-on" viewBox="0 0 16 16"><path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>') !important;
+}
+
+// Collapsed / secondary nav inherits the dark background otherwise.
+nav.quarto-secondary-nav.color-navbar {
+  background-color: $paper-bg !important;
+  color: $ink !important;
+}
