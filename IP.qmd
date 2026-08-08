@@ -1,0 +1,54 @@
+---
+title: Definiciones Oficiales.
+description: Marco teórico para una mejor comprensión de las transferencias municipales.
+author: Miguel RC.
+---
+# Ingresos Permanentes
+
+Según el SINIM (Sistema Nacional de Información Municipal),
+los **IP** están compuestos por los _Ingresos Propios Permanentes (IPP)_ + _Ingresos por Fondo Común Municipal (FCM)_.
+
+## Fondo Común Municipal
+
+Es una fuente de financiamiento que está definido por la Constitución Política,
+como un _mecanismo de redistribución solidaria de los ingresos propios entre las municipalidades del país_.
+Este mecanismo redistributivo, opera a través de mayores aportes de parte de las municipalidades con mas recursos,
+las que ayudan a la operación de aquellas que cuentas con una menor capacidad financiera
+(todas las comunas reciben esta asignación).
+Es pagado en dos oportunidades por mes,
+la primera como anticipo (calculado en base a un porcentaje de la recaudación histórica del mismo mes del año anterior)
+y la segunda como saldo (calculado en base a la recaudación de mes inmediatamente anterior al pago).
+
+::: {.callout-tip .collapse="true"}
+## Identificación
+Estos ingresos se encuentran bajo:
+
+Subtítulo 08 - Otros Ingresos Corrientes
+Ítem 03 - Participación del Fondo Común Municipal
+:::
+
+## IPP
+
+Se componen por las siguientes cuentas del clasificador presupuestario:
+
+- Ingreso Territorial
+- Permisos de Circulación de Beneficio Municipal
+- Patentes de Beneficio Municipal
+- Derechos de Aseo
+- Otros Derechos
+- Rentas a la Propiedad
+- Licencias de Conducir y Similares
+- Multas e Intereses
+- Concesiones
+- Patentes Acuícolas
+- Patentes Mineras
+- Casinos
+
+
+::: {.callout-tip .collapse="true"}
+## Identificación
+Estos ingresos se encuentran bajo:
+
+Subtítulo 08 - Otros Ingresos Corrientes
+Ítem 03 - Participación del Fondo Común Municipal
+:::

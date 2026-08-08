@@ -118,3 +118,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+
+# Ignore local task secrets
+.vscode/bugwarriorrc
