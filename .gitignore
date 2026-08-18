@@ -121,3 +121,6 @@ Temporary Items
 
 # Ignore local task secrets
 .vscode/bugwarriorrc
+
+# Caché reproducible creado por utils.data.data_loader
+/data_normalized/
