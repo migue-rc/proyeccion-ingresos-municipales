@@ -1,0 +1,290 @@
+/* ============================================================================
+   PER-PROJECT PLAIN-CSS OVERRIDES  —  EDIT THIS FILE
+   ----------------------------------------------------------------------------
+   Quick CSS tweaks for this project only. Never touched by `make fetch-styles`.
+   Loaded after the shared theme; use this for one-off CSS, or custom.scss for
+   theme/variable-level changes. Example:
+
+     .navbar-title { font-weight: 700; }
+   ============================================================================ */
+
+.page-layout-full #quarto-document-content {
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+.project-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.8fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  margin: 1rem 0 4rem;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border: 2px solid var(--bs-border-color);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at top right, rgba(var(--bs-primary-rgb), 0.2), transparent 45%),
+    var(--bs-tertiary-bg);
+  box-shadow: 0.55rem 0.55rem 0 rgba(var(--bs-primary-rgb), 0.15);
+}
+
+.project-hero h2 {
+  max-width: 16ch;
+  margin-top: 0.35rem;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.04;
+}
+
+.project-hero__copy > p:not(.project-eyebrow) {
+  max-width: 68ch;
+  font-size: 1.08rem;
+}
+
+.project-eyebrow {
+  margin-bottom: 0;
+  color: var(--bs-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.project-hero .btn,
+#quarto-document-content > .btn {
+  margin: 0.35rem 0.35rem 0.35rem 0;
+}
+
+.project-hero__metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.project-metric {
+  min-height: 8.5rem;
+  padding: 1rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.85rem;
+  background: var(--bs-body-bg);
+}
+
+.project-metric strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--bs-primary);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1;
+}
+
+.project-flow,
+.income-grid,
+.cluster-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 1.5rem 0 3rem;
+}
+
+.project-flow {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.income-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cluster-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.project-flow__step,
+.income-card,
+.cluster-card {
+  position: relative;
+  padding: 1.2rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.85rem;
+  background: var(--bs-body-bg);
+}
+
+.project-flow__step span {
+  display: inline-block;
+  margin-bottom: 0.65rem;
+  color: var(--bs-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.project-flow__step p,
+.income-card p,
+.cluster-card p {
+  margin-bottom: 0;
+}
+
+.income-card h3,
+.cluster-card h3 {
+  margin-top: 0;
+  font-size: 1.08rem;
+}
+
+.cluster-card {
+  padding-top: 3.2rem;
+}
+
+.cluster-card--available {
+  border-color: var(--bs-success);
+  box-shadow: inset 0 0 0 1px var(--bs-success);
+}
+
+.cluster-card--soon {
+  background: var(--bs-secondary-bg);
+}
+
+.status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.status-badge--available {
+  color: var(--bs-success-text-emphasis);
+  background: var(--bs-success-bg-subtle);
+}
+
+.status-badge--soon {
+  color: var(--bs-secondary-color);
+  background: var(--bs-tertiary-bg);
+}
+
+@media (max-width: 991.98px) {
+  .project-hero,
+  .cluster-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-hero__copy {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .project-flow,
+  .income-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .project-hero,
+  .project-hero__metrics,
+  .cluster-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-hero {
+    padding: 1.25rem;
+    box-shadow: 0.3rem 0.3rem 0 rgba(var(--bs-primary-rgb), 0.15);
+  }
+}
+
+/* Technical pages: keep long titles inside the article column and away from
+   Quarto's right-hand table of contents. */
+.page-layout-article #title-block-header,
+.page-layout-article main.content {
+  min-width: 0;
+}
+
+.page-layout-article #quarto-document-content {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+}
+
+.page-layout-article #title-block-header .quarto-title h1.title {
+  max-width: 28ch;
+  font-size: clamp(2rem, 2.6vw, 2.75rem);
+  line-height: 1.08;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.page-layout-article #TOC .nav-link {
+  font-size: 0.9rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.page-layout-article .cell,
+.page-layout-article .cell-output,
+.page-layout-article .cell-output-display,
+.page-layout-article .cell-output-stdout {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.page-layout-article .cell-output-display:has(table),
+.page-layout-article .cell-output-stdout {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.page-layout-article .cell-output-stdout pre {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* Compact, closed-by-default notebook outputs. */
+.collapsible-output,
+.cluster-members {
+  margin-top: 0.8rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.5rem;
+  background: var(--bs-tertiary-bg);
+}
+
+.collapsible-output summary,
+.cluster-members summary {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.collapsible-output[open] summary,
+.cluster-members[open] summary {
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.collapsible-output__content {
+  max-width: 100%;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.collapsible-output__content > :last-child {
+  margin-bottom: 0;
+}
+
+.collapsible-output__text {
+  max-height: 24rem;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.cluster-members__list {
+  columns: 3 12rem;
+  column-gap: 2rem;
+  margin: 0;
+  padding: 1rem 1rem 1rem 2.25rem;
+}
+
+.cluster-members__list li {
+  break-inside: avoid;
+  margin-bottom: 0.25rem;
+}

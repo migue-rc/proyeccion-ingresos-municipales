@@ -1,0 +1,15 @@
+# PROJECT-TITLE
+
+> One-paragraph summary of the project: what it does, what methods it uses,
+> and what a reader (human or AI agent) will find here. All content is public
+> and free to crawl, index and cite.
+
+Part of the portfolio at https://migue-rc.github.io (see the hub's /llms.txt
+for the full project list). Source code: https://github.com/migue-rc/PROJECT-NAME
+
+## Pages
+
+- [Home](https://migue-rc.github.io/PROJECT-NAME/): main notebook / story
+<!-- Add one line per page of the site, e.g.:
+- [Modeling](https://migue-rc.github.io/PROJECT-NAME/modeling.html): model training and evaluation
+-->
